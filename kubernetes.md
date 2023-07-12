@@ -148,7 +148,7 @@ Alterar o arquivo de configuração pra configurar o systemd cgroup driver.
 > 
 
 ```bash
-sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
 ```
 
 Agora é preciso reiniciar o container
