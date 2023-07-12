@@ -1,3 +1,24 @@
+# Desativar Swap
+Para desativar permanentemente o espaço de troca no Linux, abra o arquivo /etc/fstab, procure a linha de troca e comente toda a linha adicionando um sinal de (hashtag) na frente da linha, como mostrado na captura de tela abaixo.#
+```bash
+sudo nano /etc/fstab
+```
+Exemplo:
+```
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda2 during installation
+UUID=10122351-de09-456f-bb0e-ffc7e7264dda /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/sda1 during installation
+UUID=8287-BAE0  /boot/efi       vfat    umask=0077      0       1
+#/swapfile                                 none            swap    sw              0       0
+```
+
 # Instalação com Kubeadm
 
 Existem diversas formar de criar o seu cluster Kubernetes, aqui, o objetivo vai ser criar o seu cluster de forma on-premisse utilizando o kubeadm.
