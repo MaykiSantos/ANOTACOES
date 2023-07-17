@@ -299,3 +299,9 @@ spec:
 ```
 
 Agora sim, você tem o cluster Kubernetes instalado e funcionando. Lembrando que você só deve usar esse setup em testes e NUNCA EM PRODUÇÃO !!!
+
+
+# Gerar token dashboard
+```
+kubectl -n kubernetes-dashboard create token admin-user
+```
