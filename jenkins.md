@@ -41,3 +41,23 @@ crie a chave ssh no servidor que está executando o jenkins conforme a documenta
 3. Já no painel do jankins vá para _Gerenciar Jenkins > Credentials > (global) > add credentials_
 4. preencha o formulário, conforme a baixo e clique em "Create"
   ![image](https://github.com/MaykiSantos/ANOTACOES/assets/58126683/5c5cba50-5630-44b7-ab19-a0e38679fafb)
+
+## Configure deamon docker
+Crie o arquivo de configuração do seriço:
+```
+sudo mkdir -p /etc/systemd/system/docker.service.d/
+sudo nano /etc/systemd/system/docker.service.d/override.conf
+```
+Coloque esse conteudo no arquivo:
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376
+```
+Reinicie os serviços:
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
+```
+
+
