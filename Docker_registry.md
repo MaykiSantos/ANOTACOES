@@ -39,3 +39,15 @@ docker tag minha-imagem-teste:0.3 10.131.14.77:30001/nome-minha-imagem:0.1
 ```
 docker push 10.131.14.77:30001/nome-minha-imagem:0.1
 ```
+
+
+# anotações
+
+#### Exibe o hitorico 
+```
+cat ~/.docker/config.json
+```
+#### exibe as informações de configuração do docker
+```
+docker info
+```
