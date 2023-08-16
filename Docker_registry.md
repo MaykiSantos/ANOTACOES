@@ -51,3 +51,11 @@ cat ~/.docker/config.json
 ```
 docker info
 ```
+
+#### adicionar secret do registry no kubernetes
+```
+kubectl create secret docker-registry docker-registry-local \
+--docker-server=http://10.131.14.77:30002/v2/ \
+--docker-username=meu_usuario \
+--docker-password=minha_senha
+```
